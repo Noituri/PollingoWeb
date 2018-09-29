@@ -16,6 +16,7 @@
 }
 
 html {
+  height: 100%;
   background: linear-gradient(45deg,#DA1FF2,#4C15D0) no-repeat center center fixed;
 }
 
@@ -25,22 +26,5 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-}
-
-.title {
-  font-size: 62px;
-} 
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
