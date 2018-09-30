@@ -5,14 +5,14 @@
       <form @submit.prevent="loginEmailPass">
         <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="email" placeholder="Mail">
         <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="password" placeholder="Password">
-        <button style="margin-top:1rem" class="bg-purple hover:bg-purple-dark text-white font-bold py-2 px-4 rounded-full">
+        <button style="margin-top:1rem" class="select-none bg-purple hover:bg-purple-dark text-white font-bold py-2 px-4 rounded-full">
           Sign In
         </button>
       </form>
-      <button style="margin-top:1rem" @click="loginFacebook" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">
+      <button style="margin-top:1rem" @click="loginFacebook" class="select-none bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded-full">
         Sign In with Facebook
       </button>
-      <button style="margin-top:1rem" @click="loginGoogle" class="bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded-full">
+      <button style="margin-top:1rem" @click="loginGoogle" class="select-none bg-red hover:bg-red-dark text-white font-bold py-2 px-4 rounded-full">
         Sign In with Google
       </button>
 

@@ -3,11 +3,19 @@
     <div class="loginDialog-Content">
       <h3>Register</h3>
       <form @submit.prevent="loginEmailPass">
-        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" placeholder="Username">
-        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="email" placeholder="Mail">
-        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="password" placeholder="Password">
-        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="password" placeholder="Repeat password">
-        <button style="margin-top:1rem" class="bg-purple hover:bg-purple-dark text-white font-bold py-2 px-4 rounded-full">
+        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" placeholder="Username" v-validate="{ min:5, required:true, alpha_dash:true, max:15 }" name="Username">
+        <p class="error" v-if="errors.has('Username')">{{errors.first('Username')}}</p>
+
+        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="email" placeholder="Mail" v-validate="{ required: true, email: true }" name="Mail">
+        <p class="error" v-if="errors.has('Mail')">{{errors.first('Mail')}}</p>        
+        
+        <input v-model="password" style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="password" placeholder="Password" v-validate="{ required: true, min: 6 }" name="Password">
+        <p class="error" v-if="errors.has('Password')">{{errors.first('Password')}}</p>        
+        
+        <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="password" placeholder="Repeat password" v-validate="{ required: true, is: password }" name="Repeat password">
+        <p class="error" v-if="errors.has('Repeat password')">{{errors.first('Repeat password')}}</p>        
+        
+        <button style="margin-top:1rem" class="select-none bg-purple hover:bg-purple-dark text-white font-bold py-2 px-4 rounded-full">
           Join
         </button>
         <p style="margin-top:1rem" class="termstext text-purple">By clicking 'Join' button you accept terms of this website</p>
@@ -22,6 +30,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class RegisterComponent extends Vue {
+  private data() {
+    return {
+      password: '',
+    }
+  }
+
   private registerEmailPass(): void {
     // Login with email and password backend
     // this.$emit('dismissLogin');

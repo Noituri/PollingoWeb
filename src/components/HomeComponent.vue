@@ -2,7 +2,7 @@
   <div class="home" style="margin-top:1rem">
     <div class="container mx-auto">
       <div class="flex flex-col items-center">
-      <h1 class="title">{{ appName }}</h1>
+      <h1 class="title select-none">{{ appName }}</h1>
         <transition name="slide-fade">
           <LoginComponent v-on:dismissLogin="dismissLogin" v-on:register="changeStateRegisterDialog" v-if="showLoginDialog"/>
           <RegisterComponent v-on:login="changeStateRegisterDialog" v-if="showRegisterDialog"/>
