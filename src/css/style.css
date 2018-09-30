@@ -1,0 +1,48 @@
+.title {
+    font-size: 4.5rem;
+  }
+  
+  .subtext {
+    font-size: 1rem;
+  }
+
+  .termstext {
+    font-size: 0.55rem;
+  }
+  
+  .loginDialog {
+    padding-bottom: 2rem;
+    z-index: 1;
+    padding-top: 2rem;
+    top: 25%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    font-size: 1.5rem;
+  }
+  
+  .loginDialog-Content {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: none;
+  }
+  
+  .slide-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+  
+  .slide-fade-leave-active {
+    transition: all 0.6s ease;
+  }
+  
+  .slide-fade-enter,
+  .slide-fade-leave-to {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
