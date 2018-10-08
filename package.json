@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vue-cli-service build && rm -rf src/server/public && mv dist src/server/public",
+    "lint": "vue-cli-service lint",
+    "full": "node src/server/server.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "register-service-worker": "^1.0.0",
     "vee-validate": "^2.1.0-beta.9",
     "vue": "^2.5.17",
