@@ -2,7 +2,30 @@
   <div class="poll" style="margin-top:1rem">
     <div class="container mx-auto">
       <div class="flex flex-col items-center">
-        <h1 class="title select-none">{{ poll.title }}</h1>
+        <h1 class="select-none">{{ poll.title }}</h1>
+
+        <div v-for="(question, index) in poll.questions" :key="question.question" class="q-Dialog" style="max-width: 20rem; min-width: 20rem;">
+          <div class="Dialog-Content">
+            <h6 style="margin-bottom:0.5rem">{{ question.question }}</h6>
+
+            <form v-if="question.type_poll == 'ONE_OPTION'">
+              <div v-for="option in question.options" :key="option.option" class="options">
+                <input type="radio" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
+              </div>
+            </form>
+
+            <form v-else-if="question.type_poll == 'MORE_OPTIONS'">
+              <div v-for="option in question.options" :key="option.option" class="options">
+                <input type="checkbox" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+        <button style="margin-top:1rem" class="select-none bg-purple hover:bg-purple-dark text-white font-bold py-2 px-4 rounded-full">
+          Send
+        </button>
       </div>
     </div>
   </div>

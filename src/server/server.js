@@ -38,7 +38,7 @@ app.post('/server', (req, res) => {
 })
 
 // Create default port to serve the app on
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 3000
 app.listen(port)
 
 // Log to feedback that this is actually running

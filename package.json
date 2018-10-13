@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && rm -rf src/server/public && mv dist src/server/public",
     "lint": "vue-cli-service lint",
-    "full": "node src/server/server.js"
+    "full": "node src/server/server.js",
+    "full-build": "npm run build && npm run full"
   },
   "dependencies": {
     "axios": "^0.18.0",

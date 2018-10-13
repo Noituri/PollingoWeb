@@ -1,5 +1,9 @@
-.title {
+  .title {
     font-size: 4.5rem;
+  }
+
+  .options {
+    font-size: 1rem;
   }
   
   .subtext {
@@ -16,10 +20,27 @@
     color:red;
   }
   
-  .loginDialog {
+  .Dialog {
     padding-bottom: 2rem;
-    z-index: 1;
     padding-top: 2rem;
+    z-index: 1;
+    top: 25%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 50%;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    color: #000;
+    font-size: 1.5rem;
+  }
+
+  .q-Dialog {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    z-index: 1;
     top: 25%;
     margin-top: 2rem;
     margin-left: 1rem;
@@ -33,7 +54,7 @@
     font-size: 1.5rem;
   }
   
-  .loginDialog-Content {
+  .Dialog-Content {
     margin-left: 1rem;
     margin-right: 1rem;
     box-shadow: none;

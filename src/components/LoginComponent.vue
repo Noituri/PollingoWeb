@@ -1,6 +1,6 @@
 <template>
-  <div class="loginDialog max-w-sm">
-    <div class="loginDialog-Content">
+  <div class="Dialog max-w-sm">
+    <div class="Dialog-Content">
       <h3>Sign In</h3>
       <form @submit.prevent="loginEmailPass">
         <input style="margin-top:1rem" class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="email" placeholder="Mail">
