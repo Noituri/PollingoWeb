@@ -5,9 +5,11 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && rm -rf src/server/public && mv dist src/server/public",
+    "build-pwsh": "vue-cli-service build && powershell Remove-Item src/server/public -recurse && powershell Move-Item -Path dist -Destination src/server/public",
     "lint": "vue-cli-service lint",
     "full": "node src/server/server.js",
-    "full-build": "npm run build && npm run full"
+    "full-build": "npm run build && npm run full",
+    "full-build-pwsh": "npm run build-pwsh && npm run full"
   },
   "dependencies": {
     "axios": "^0.18.0",

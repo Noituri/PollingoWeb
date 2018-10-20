@@ -8,18 +8,23 @@
           <div class="Dialog-Content">
             <h6 style="margin-bottom:0.5rem">{{ question.question }}</h6>
 
-            <form v-if="question.type_poll == 'ONE_OPTION'">
-              <div v-for="option in question.options" :key="option.option" class="options">
-                <input type="radio" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
-              </div>
-            </form>
+            <div>
+              <form v-if="question.type_poll == 'ONE_OPTION'">
+                <div v-for="option in question.options" :key="option.option" class="options">
+                  <label>
+                    <input type="radio" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
+                  </label>
+                </div>
+              </form>
 
-            <form v-else-if="question.type_poll == 'MORE_OPTIONS'">
-              <div v-for="option in question.options" :key="option.option" class="options">
-                <input type="checkbox" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
-              </div>
-            </form>
-
+              <form v-else-if="question.type_poll == 'MORE_OPTIONS'">
+                <div v-for="option in question.options" :key="option.option" class="options">
+                  <label>  
+                    <input type="checkbox" v-bind:name="index" v-bind:value="option.option"> {{option.option}}
+                  </label>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
 
@@ -30,6 +35,14 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-top: -1px;
+    vertical-align: middle;
+  }
+</style>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';

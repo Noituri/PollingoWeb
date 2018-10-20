@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7a4eba12a291edfb1d9893c344f9c4c5.js"
+  "/precache-manifest.ca887f8991333b03e6db1b959dbbcd8c.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pollingoweb"});
